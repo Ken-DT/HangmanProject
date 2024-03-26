@@ -1,0 +1,16 @@
+{
+  "name": "hangmanproject",
+  "version": "1.0.0",
+  "description": "Update me with a description of: Hangman Project for CanCode Communities Class",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kenneth D. Teasley",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
