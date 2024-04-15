@@ -14,8 +14,8 @@ function displayGameState(displayString, remainingGuesses, guessedLetters) {
   console.log("Guessed Letters: " + guessedLetters.join(", "));
 }
 
-// Main game function
-function playHangman() {
+// Function to play a round of Hangman
+function playHangman(stats) {
   let selectedWord = getRandomWord();
   let guessedLetters = [];
   let remainingGuesses = 6;
@@ -58,21 +58,25 @@ function playHangman() {
   // End of game
   if (!displayString.includes("_")) {
     console.log("\nCongratulations! You guessed the word: " + selectedWord);
+    stats.wins++;
   } else {
     console.log("\nGame Over. The word was: " + selectedWord);
+    stats.losses++;
   }
 }
 
 // Function to ask if the player wants to play again
-function askPlayAgain() {
+function askPlayAgain(stats) {
+  console.log(`Wins: ${stats.wins}, Losses: ${stats.losses}`);
   const playAgain = prompt.question("Do you want to play again? (yes/no) ").toLowerCase();
   if (playAgain === "yes") {
-    playHangman(); // Restart the game
+    playHangman(stats); // Restart the game
   } else {
-    console.log("Thanks for playing!");
+    console.log("Thanks for playing! Final scores - Wins: ${stats.wins}, Losses: ${stats.losses}");
   }
 }
 
 // Start the game
-playHangman();
-askPlayAgain();
+const gameStats = { wins: 0, losses: 0 };
+playHangman(gameStats);
+askPlayAgain(gameStats);
