@@ -1,4 +1,4 @@
-Hangman Game
+##Hangman Game
 
 Welcome to the Hangman game, implemented in Node.js! This version of the classic word-guessing game is designed to be played in the command-line interface. Players try to guess a word by suggesting letters within a limited number of guesses.
 
